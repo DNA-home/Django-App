@@ -1,0 +1,6 @@
+<h3>Recent activities</h3>
+{% for message in tot_messages %}
+<p><a href="{% url 'user-profile' message.user.id %}"></a>{{message.user}} {{message.created|timesince}}</p>
+<p>has replied to {{message.room}}</p>
+<p>{{message.body}}</p>
+{% endfor %}

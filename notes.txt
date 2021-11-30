@@ -1,0 +1,77 @@
+look into the django documentation when doing a project.
+
+look into each and every thing you are going to be using, this will help immensly.
+
+
+also look up how to make a sort of pop up menu, this will invariably be useful.
+
+
+
+the input type for the forms should only be submit, and it will fail if we put it as button.
+
+
+
+the '_' is used to access parent/referenced tables or models when using the filter method. In this particualr project, we have used
+it to access the the room model from the message model in the room view. As seen below
+'messages=Message.objects.filter(room_id=pk)'
+
+you can also make the '_' more than one to access the parent of the parent, and so on.
+
+
+There are: "icontains",'contains','startswith','endswith' and other additional things that could be added, that we can use
+to filter out some of the content or data.
+'icontains' sees if it contains at least some of the data specified, could be some of the words.
+ 'contains' ignores the the capitalization, but does the same thing.
+
+
+we don't need a csrf_token when using a get method.
+
+what these post and get methods do is that they sort of add the elements to the url, they differ in how they do it,
+but essentially that is what they do.
+
+
+we insert things in the context to access them in the html file,
+using the names we have given them in the dictionary as their values.
+
+
+there are some names you shouldn't use for your views. E.g login
+
+
+
+when using the  <object>.objects.get() the first thing we enter in the brackets is the field of the object, then we enter
+the thing we want to compare that to. e.g
+user=User.objects.get(username=username)
+here the first username is for the field 'username' in the object 'User' the second is of our own making.
+
+view restriction using mixin, decorators and middleware.
+
+
+the html page can access the elements/fields of a view only after they have been passed as context.
+
+
+to access the elements of a child/one that is referring to a parent class, we need to call the name of the parent, then . then
+the name of the child in lowercase letters, underscore set. After that we can use get or all
+e.g    message= room.message_set.all()  this accesses all the elements of the Message class.
+
+
+find all rooms where user is host
+then use that host to find the messages in those rooms
+
+
+in the {%%} thing, the 
+
+
+the error in the home view, specifically related to the filtering, we used room__name and saw if it contained the query but that
+is erroneous in that we are checking if the name of the room contains the query when instead it should have been the topic.
+
+
+We can access, and change the style sheet for all the pages that inherit from a parent page, if we have linked the parent page
+with the stylesheet.
+
+
+
+we state in settings.py the location for the static files,
+after that when loading static files we define the path starting from
+the path specified as the current directory.
+
+

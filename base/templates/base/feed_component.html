@@ -1,0 +1,41 @@
+{% for room in rooms %}
+        <table border="0" width="40%" cellpadding="15" cellspacing="0" bgcolor="#353535">
+            <tr>
+                <td><a href="{% url 'user-profile' room.host.id %}">{{room.host.username}}</a></td>
+                <td colspan="2" align="right">{{room.created}}</td>
+            </tr>
+            <tr>
+                <td><a href="room/{{room.id}}">
+                    <font color="#ffffff">{{room.name}}</font>
+                </a></td>
+            </tr>
+            <tr>
+                <td colspan="3">{{room.description}}</td>
+            </tr>
+            <tr>
+                <td colspan="3">{% for participants in participant_count %}
+                    {% if participants.room == room %}
+                    <p>{{participants.count}} people have participated</p>
+                    {% endif %}
+                    {% endfor %}
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <hr>
+                </td>
+            </tr>
+            <tr>
+                <td>{{room.topic}}</td>
+                <td>{% if request.user == room.host %}
+                    <a href="{% url 'update-room' room.id %}">Edit</a>
+                    {% endif %}
+                </td>
+                <td align="right">{% if request.user == room.host %}
+                    <a href="{% url 'delete-room' room.id %}">Delete</a></td>
+                    {% endif %}
+            </tr>
+            
+        </table>
+        <br>
+        {% endfor%}

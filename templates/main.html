@@ -2,30 +2,28 @@
 
 {% load static %}
 <html lang="en">
-<head>
-    <link rel="stylesheet" type='text/css' media='screen' href="{% static 'styles/main.css' %}">
-    <meta charset="UTF-8">   
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body class='body'>
-    {% include 'navbar.html' %}
-
-    {% if messages %}
+  <head>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="{% static 'styles/main.css' %}"
+    />
+    <title>Main</title>
+  </head>
+  <body class="body">
+    {% include 'navbar.html' %} {% if messages %}
     <ul class="messages">
-        {% for message in messages %}
-        <li>
-            {{ message }}
-        </li>
-        {% endfor %}
+      {% for message in messages %}
+      <li>{{ message }}</li>
+      {% endfor %}
     </ul>
     {% endif %}
 
-    <!-- <img src="{% static 'images/melancholy.png' %}" alt="image"> -->
+    <p>Hello</p>
 
-    {% block content%}
+    <img src="{% static 'images/melancholy.png' %}" alt="image" />
 
-    {% endblock content%}
-</body>
+    {% block content%} {% endblock content%}
+  </body>
 </html>

@@ -1,38 +1,21 @@
-{% extends "main.html" %}
-
-
-
-{% block content %}
-<style>
-    .container{
-        display: grid;
-        grid-template-columns: 1fr 3fr 1fr;
-    }
+{% extends "main.html" %} {% load static %} {% block content %}
+<link rel="stylesheet" href="{% static 'styles/home.css' %}">
 </style>
 <p><font face="Times new roman" size="18" color="blue">Home</font></p>
 
 <div class="container">
-    <div>
-        {% include 'base/topics_component.html' %}
-    </div>
-    
-    <div class='rooms'>
-        <h5>{{room_count}} rooms are available</h5>
-        <a href="{% url 'create-room' %}">Create Room</a>
-        <br>
-        <br>
+  <div>{% include 'base/topics_component.html' %}</div>
 
-        <div class='topics'>
-            {% include 'base/feed_component.html' %}
-           
-        </div>
+  <div class="rooms">
+    <h5>{{room_count}} rooms are available</h5>
+    <a href="{% url 'create-room' %}">Create Room</a>
+    <br />
+    <br />
 
-    </div>
+    <div class="topics">{% include 'base/feed_component.html' %}</div>
+  </div>
 
-    <div>
-        {% include 'base/activity_component.html' %}
-    </div>
+  <div>{% include 'base/activity_component.html' %}</div>
 </div>
 
 {% endblock content %}
-

@@ -1,10 +1,16 @@
-.body{
-    background-color: aquamarine;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+.body {
+  background-color: blue;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
-
-.aboutP{
-    color: crimson;
+.aboutP {
+  color: crimson;
 }
 
+img {
+  height: 50px;
+}
+
+p {
+  color: blue;
+}

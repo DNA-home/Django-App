@@ -1,0 +1,26 @@
+{% extends "main.html" %} {% load static %} {% block content %}
+<!-- <link rel="stylesheet" href="{% static 'styles/h.css' %}"> -->
+
+<div class="container">
+    <div>{% include 'base/topics_component.html' %}</div>
+
+    <div class="feed">
+        <div class="feed-header">
+            <div>
+                <h1>Study Rooms</h1>
+                <h5>{{room_count}} Rooms available</h5>
+            </div>
+            <div class='create-room'>
+                <a href="{% url 'create-room' %}">
+                    <h1>Create Room</h1>
+                </a>
+            </div>
+        </div>
+
+        <div>{% include 'base/feed_component.html' %}</div>
+    </div>
+
+    <div>{% include 'base/activity_component.html' %}</div>
+</div>
+
+{% endblock content %}
